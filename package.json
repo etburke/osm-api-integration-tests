@@ -1,0 +1,27 @@
+{
+  "name": "osm-api-integration-tests",
+  "version": "0.6.0",
+  "description": "Mocha tests for the Open Street Map API",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etburke/osm-api-integration-tests.git"
+  },
+  "keywords": [
+    "osm",
+    "openstreetmap",
+    "integration",
+    "test",
+    "tests",
+    "api"
+  ],
+  "author": "Thomas Burke",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/etburke/osm-api-integration-tests/issues"
+  },
+  "homepage": "https://github.com/etburke/osm-api-integration-tests#readme"
+}
