@@ -17,4 +17,4 @@ The project is configured by default to run against the official master developm
 ```
 cp config.example.json config.json
 ```
-and update the username and password values with your own. This new file will be ignored by git.
+and update the email and password values with your own. This new file will be ignored by git.
