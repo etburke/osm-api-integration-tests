@@ -5,9 +5,9 @@ This project is meant to help when developing APIs that mimick the official OSM 
 
 First, you'll need node and npm. Visit [nodejs.org](https://nodejs.org/) to get started.
 
-Next, you'll need [mocha](https://mochajs.org/). Installing mocha globally is recommended.
+Next, you'll need [mocha](https://mochajs.org/) and [gulp](http://gulpjs.com/). Both should be installed globally.
 ```
-npm install mocha -g
+npm install mocha gulp -g
 ```
 Now install the project's dependencies.
 ```

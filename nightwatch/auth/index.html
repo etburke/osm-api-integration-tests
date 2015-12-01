@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Oauth Test Page</title>
+</head>
+<body>
+    <div id="token"></div>
+    <script src='../../lib/osmauth.min.js'></script>
+    <script>
+      var auth = window.auth = osmAuth({
+          url: 'http://master.apis.dev.openstreetmap.org',
+          oauth_consumer_key: 'snraEBUEdOXhBs7tIauEpZJel3FJQJpewAC4EIe1',
+          oauth_secret: '7haFPEIbIipTlV0FdgX38Oyw9DIanazRvVfILsRx',
+          auto: true
+      });
+
+      auth.xhr({
+          method: 'GET',
+          path: '/api/0.6/user/details'
+      }, function(err, details) {
+          console.log(err, details, auth)
+          // details is an XML DOM of user details
+          auth.xhr({
+              method: 'GET',
+              path: '/api/0.6/user/details'
+          }, function(err, details) {
+              console.log(err, details, auth)
+              // details is an XML DOM of user details
+          });
+      });
+    </script>
+</body>
+</html>
