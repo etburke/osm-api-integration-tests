@@ -1,5 +1,12 @@
 {
   "baseApiPath": "http://master.apis.dev.openstreetmap.org/",
+  "basicAuthCreds": {
+    "user": "",
+    "pass": ""
+  },
   "username": "",
-  "password": ""
+  "oauth": {
+    "oauthToken": "",
+    "oauthSecret": ""
+  }
 }

@@ -5,40 +5,23 @@ process.env.NODE_ENV = 'test';
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import rp from 'request-promise';
-import xml2js from 'xml2js';
+import utils from '../../test-utils.js';
 
-const config = require('../../config.json');
 const expect = chai.expect;
-const parseString = function parseString (xml) {
-  return new Promise(function (resolve, reject) {
-    xml2js.parseString(xml, function (err, result) {
-      if (err) {
-        reject(err);
-      }
-      else {
-        resolve(result);
-      }
-    });
-  });
-}
 
 chai.should();
 chai.use(chaiAsPromised);
 
 describe('Basic HTTP Authentication', function () {
-  // this.timeout(15000);
 
   it('Should get permissions for a valid user', function () {
     return rp({
-        uri: config.baseApiPath + 'api/0.6/permissions',
+        uri: utils.baseApiPath + 'api/0.6/permissions',
         method: 'GET',
         sendImmediately: false,
-        auth: {
-          user: config.email,
-          pass: config.password
-        }
+        auth: utils.basicAuthCreds
       })
-      .then(parseString)
+      .then(utils.parseXml)
       .then(function validateResponse (res) {
         expect(res).to.include.keys('osm');
         expect(res.osm).to.include.keys('permissions');
